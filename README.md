@@ -38,10 +38,15 @@ https://github.com/Noemata/SimpleMVVM
 
 The original port to WinUI 3 Preview 4 was done over (4) 7.5 hour days and went fairly smoothly.  The transition was impressively easy.  Composition animation code had to be removed from WinUI.  Look for MP! in the comments for other changes or limitations.
 
-Transitioning to Reunion 0.5 took just over an hour.  However, there were new issues.  C++ exceptions have to be disabled when debugging.  One portion of code is no longer functional because it uses the Pivot control.
+Transitioning to Reunion 0.5 took just over an hour.  However, there were new issues.  C++ exceptions have to be disabled when debugging.
+
+One portion of code is no longer functional: https://github.com/Noemata/FakePOS/blob/master/FakePOS/FakePOSuwp/Views/Catalog/ItemDetail/ItemDetailView.xaml
+because it uses the Pivot control, formerly available in WinUI 3 Preview 4.
 
 Microsoft will need to add back the Pivot control in WinUI 0.5, it's too common a UI pattern in UWP apps to be left out at this stage.
 
 This sample will be updated once Microsoft adds back the Pivot control or someone else decides to author a substitute as not having Pivot will break many UWP porting efforts.
+
+Porting UWP to WinUI could be made even easier with something like this: https://github.com/microsoft/microsoft-ui-xaml/issues/4445
 
 Would be great to see this code get pushed over the finish line with the help of others (hint).
