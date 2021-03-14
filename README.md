@@ -30,6 +30,7 @@ https://github.com/Alvaromah/eShopOnUWP
 https://github.com/dotnet-architecture/eShopOnUWP
 https://github.com/Alvaromah/eShopOnUWP
 https://github.com/microsoft/WinUI-3-Demos/tree/master/src/ContosoAirlinePOS
+https://github.com/Noemata/SimpleMVVM
 
 ## Notes
 
