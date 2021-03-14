@@ -89,7 +89,7 @@ namespace FakePOS.ViewModels
         public bool IsSeparatorVisible => IsDeleteVisible;
         public bool IsDeleteVisible => Mode == ListCommandBarMode.ItemsSelected || Mode == ListCommandBarMode.AllSelected;
 
-        // MP! fixme:
+        // MP! fixme: I think this is ok now, veryify ...
         public IRelayCommand SelectionChangedCommand => new RelayCommand<SelectionChangedEventArgs>(OnSelectionChanged);
 
         public IRelayCommand SelectAllCommand => new RelayCommand(OnSelectAll);
@@ -200,7 +200,7 @@ namespace FakePOS.ViewModels
                     if (selectedItems.Length == 1)
                     {
                         var item = selectedItems[0];
-                        // MP! fixme:
+                        // MP! fixme: not yet implemented
                         //ToastNotificationsService.Current.ShowToastNotification(Constants.NotificationDeletedItemTitleKey.GetLocalized(), item);
                     }
                 }

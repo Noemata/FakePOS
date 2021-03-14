@@ -183,7 +183,7 @@ namespace FakePOS.ViewModels
                     await DataProvider.DeleteItemAsync(Item);
                     ShellViewModel.GoBack();
 
-                    // MP! fixme:
+                    // MP! fixme: not yet implemented
                     //ToastNotificationsService.Current.ShowToastNotification(Constants.NotificationDeletedItemTitleKey.GetLocalized(), Item);
                 }
                 catch (Exception ex)
@@ -196,7 +196,7 @@ namespace FakePOS.ViewModels
 
         private void OnShare()
         {
-            // MP! fixme:
+            // MP! fixme: not yet implemented
             //NavigationService.Navigate(typeof(Views.ItemShareView), new ItemShareState(Item));
         }
 

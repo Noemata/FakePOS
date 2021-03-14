@@ -15,7 +15,7 @@ namespace FakePOS.ViewModels
         {
             _messenger = messenger;
 
-            // MP! todo: figure out how to set theme globally
+            // MP! todo: figure out how to set theme globally, implementation not yet complete
             //_messenger.Send(new ThemeStateMessage(ThemeState.Light));
         }
     }

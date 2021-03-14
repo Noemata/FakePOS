@@ -226,7 +226,7 @@ namespace FakePOS.ViewModels
 
         private async void OnDelete()
         {
-            // MP! fixme:
+            // MP! fixme: not yet implemented
             //ShellViewModel.Current.EnableView(false);
 
             bool? result = await _userNotificationService.ConfirmationDialogAsync("Confirm Delete", "Ok", "Cancel");
@@ -250,7 +250,7 @@ namespace FakePOS.ViewModels
                     if (selectedItems.Length == 1)
                     {
                         var item = selectedItems[0];
-                        // MP! fixme:
+                        // MP! fixme: not yet implemented
                         //ToastNotificationsService.Current.ShowToastNotification(Constants.NotificationDeletedItemTitleKey.GetLocalized(), item);
                     }
                 }
@@ -261,7 +261,7 @@ namespace FakePOS.ViewModels
                 }
                 _cancelOnSelectionChanged = false;
             }
-            // MP! fixme:
+            // MP! fixme: not yet implemented
             //ShellViewModel.Current.EnableView(true);
 
             IsCommandBarOpen = false;

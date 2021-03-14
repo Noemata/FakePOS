@@ -14,6 +14,7 @@
                 <ResourceDictionary Source="/Styles/Catalog.xaml" />
                 <ResourceDictionary Source="/Styles/Converters.xaml" />
                 <ResourceDictionary Source="/Styles/RadioButtons.xaml" />
+                <!-- MP! odd: the ref below shouldn't be required, breaking change from UWP -->
                 <ResourceDictionary Source="/Themes/Generic.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <!-- Other app resources here -->
