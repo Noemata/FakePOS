@@ -14,6 +14,7 @@ Note how most of the WinUI solution contains nothing, with the bulk of the code 
 
 I have removed the purhase order processing screen, since that is part of a separate effort that is copyrighted.
 The Charting screen has also been removed since it does not materially affect the porting effort and was changed significantly relative to the original code.
+The Microsoft.Toolkit.Uwp.UI.Controls.DataGrid was used to replace Telerik's UWP version.  They are not directly interchangealbe so that portion of this code still needs work as it represents a complete break from the original.
 
 ## Screenshots
 ![Screenshot](https://github.com/Noemata/FakePOS/blob/master/LoginView.png)
