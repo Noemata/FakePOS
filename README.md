@@ -42,3 +42,5 @@ Transitioning to Reunion 0.5 took just over an hour.  However, there were new is
 Microsoft will need to add back the Pivot control in WinUI 0.5, it's too common a UI pattern in UWP apps to be left out at this stage.
 
 This sample will be updated once Microsoft adds back the Pivot control or someone else decides to author a substitute as not having Pivot will break many UWP porting efforts.
+
+Would be great to see this code get pushed over the finish line with the help of others (hint).
