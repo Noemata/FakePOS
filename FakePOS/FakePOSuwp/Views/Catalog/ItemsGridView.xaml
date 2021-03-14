@@ -1,0 +1,70 @@
+﻿<UserControl
+    x:Class="FakePOS.Views.ItemsGridView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:i="using:Microsoft.Xaml.Interactivity"
+             xmlns:ic="using:Microsoft.Xaml.Interactions.Core"
+             xmlns:toolkit="using:Microsoft.Toolkit.Uwp.UI.Controls"
+             xmlns:animations="using:Microsoft.Toolkit.Uwp.UI.Animations"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <DataTemplate x:Key="BottomItem">
+            <Grid Width="50" Height="38">
+                <Image x:Name="image" Source="{Binding PictureUri}" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid>
+        <!--
+        animations:ItemsReorderAnimation.Duration="300"
+        
+        
+            <i:Interaction.Behaviors>
+                <ic:EventTriggerBehavior EventName="RightTapped">
+                    <ic:InvokeCommandAction Command="{Binding PreSelectCommand}" />
+                </ic:EventTriggerBehavior>
+                <ic:EventTriggerBehavior EventName="SelectionChanged">
+                    <ic:InvokeCommandAction Command="{Binding SelectionChangedCommand}" />
+                </ic:EventTriggerBehavior>
+            </i:Interaction.Behaviors>
+        -->
+        
+        <toolkit:AdaptiveGridView x:Name="gridView" Margin="12,0,12,24" ItemsSource="{Binding Items}" ItemTemplate="{StaticResource CatalogItem}"
+                                  SelectionMode="{Binding SelectionMode}" IsItemClickEnabled="True" IsRightTapEnabled="True" StretchContentForSingleRow="False"
+                                  DesiredWidth="260" ItemHeight="260" ContainerContentChanging="OnContainerContentChanging" ItemClickCommand="{Binding ItemClickCommand}"
+                                  ItemContainerTransitions="{x:Null}" SelectionChanged="{x:Bind ViewModel.OnSelectionChanged}"
+                                  >
+            <i:Interaction.Behaviors>
+                <ic:EventTriggerBehavior EventName="RightTapped">
+                    <ic:InvokeCommandAction Command="{Binding PreSelectCommand}" />
+                </ic:EventTriggerBehavior>
+            </i:Interaction.Behaviors>
+        </toolkit:AdaptiveGridView>
+
+        <CommandBar IsOpen="{Binding IsCommandBarOpen, Mode=TwoWay}" IsSticky="True" RequestedTheme="Dark" ClosedDisplayMode="Minimal" VerticalAlignment="Bottom" IsDynamicOverflowEnabled="False" Style="{StaticResource CommandBarRevealStyle}">
+            <CommandBar.Content>
+                <GridView x:Name="target" Margin="4,1,4,0" ItemTemplate="{StaticResource BottomItem}" ItemsSource="{Binding BarItems}" Height="58" IsSwipeEnabled="True"
+                          ScrollViewer.HorizontalScrollMode="Enabled" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollMode="Disabled" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                    <GridView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <ItemsWrapGrid Orientation="Vertical" />
+                        </ItemsPanelTemplate>
+                    </GridView.ItemsPanel>
+                </GridView>
+            </CommandBar.Content>
+            <AppBarButton Icon="Delete" Label="Delete" Command="{Binding DeleteCommand}" Visibility="{Binding IsDeleteVisible, Converter={StaticResource BoolToVisibilityConverter}}" Style="{StaticResource AppBarButtonRevealStyle}" />
+            <AppBarSeparator Visibility="{Binding IsSeparatorVisible, Converter={StaticResource BoolToVisibilityConverter}}" />
+            <AppBarButton Icon="Cancel" Label="Cancel" Command="{Binding CancelCommand}" Visibility="{Binding IsCancelVisible, Converter={StaticResource BoolToVisibilityConverter}}" Style="{StaticResource AppBarButtonRevealStyle}" />
+            <AppBarButton Icon="ClearSelection" Label="Clear" Command="{Binding ClearCommand}" Visibility="{Binding IsClearVisible, Converter={StaticResource BoolToVisibilityConverter}}" Style="{StaticResource AppBarButtonRevealStyle}" />
+            <AppBarButton Icon="SelectAll" Label="Select All" Command="{Binding SelectAllCommand}" Visibility="{Binding IsSelectAllVisible, Converter={StaticResource BoolToVisibilityConverter}}" Style="{StaticResource AppBarButtonRevealStyle}" />
+            <AppBarButton Label="Multi Select" Command="{Binding MultiSelectCommand}" Visibility="{Binding IsMultiSelectVisible, Converter={StaticResource BoolToVisibilityConverter}}" Style="{StaticResource AppBarButtonRevealStyle}">
+                <AppBarButton.Icon>
+                    <FontIcon Glyph="&#xE762;" />
+                </AppBarButton.Icon>
+            </AppBarButton>
+        </CommandBar>
+    </Grid>
+</UserControl>

@@ -1,0 +1,44 @@
+﻿<UserControl
+    x:Class="FakePOS.Views.PropertyGroup1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FakePOS.Views"
+    xmlns:controls="using:FakePOS.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <StackPanel VerticalAlignment="Top">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="12"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <controls:LabelTextBox Label="Name" Text="{x:Bind ViewModel.Item.Name, Mode=TwoWay}" />
+
+            <Grid Grid.Column="2">
+                <TextBox x:Name="Price" Padding="6,24,6,6" Text="{x:Bind ViewModel.Item.PriceString, Mode=TwoWay}" TextAlignment="Right" FontSize="16" BorderThickness="1" BorderBrush="LightGray" />
+                <TextBlock Padding="6,4" Text="Price" FontSize="14" Typography.Capitals="SmallCaps" Foreground="Gray" IsHitTestVisible="False" />
+            </Grid>
+        </Grid>
+        <Border Margin="6" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="12"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <ComboBox x:Name="CatalogTypes" Padding="6,24,6,7" ItemsSource="{x:Bind ViewModel.CatalogTypes}" SelectedValue="{x:Bind ViewModel.CatalogType, Mode=TwoWay}" FontSize="16" BorderThickness="1" BorderBrush="LightGray" HorizontalAlignment="Stretch" />
+                <TextBlock Padding="6,4" Text="Type" FontSize="14" Typography.Capitals="SmallCaps" Foreground="Gray" IsHitTestVisible="False" />
+            </Grid>
+            <Grid Grid.Column="2">
+                <ComboBox x:Name="CatalogBrands" Padding="6,24,6,7" ItemsSource="{x:Bind ViewModel.CatalogBrands}" SelectedValue="{x:Bind ViewModel.CatalogBrand, Mode=TwoWay}" FontSize="16" BorderThickness="1" BorderBrush="LightGray" HorizontalAlignment="Stretch" />
+                <TextBlock Padding="6,4" Text="Brand" FontSize="14" Typography.Capitals="SmallCaps" Foreground="Gray" IsHitTestVisible="False" />
+            </Grid>
+        </Grid>
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,88 @@
+﻿<Page
+    x:Class="FakePOS.Views.ItemDetailView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:views="using:FakePOS.Views"
+    xmlns:controls="using:FakePOS.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="WhiteSmoke">
+        <ScrollViewer x:Name="scrollViewer">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="338"/>
+                    <RowDefinition Height="146"/>
+                    <RowDefinition Height="134"/>
+                    <RowDefinition Height="180"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="324"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- MP! fixme: critical bit of functionality no longer supported in WinUI 0.5 -->
+                <!--Pivot Properties-->
+                <!--<Pivot Grid.Row="3" Grid.Column="1" Margin="0,0,12,0" BorderBrush="LightGray" BorderThickness="1" Background="White">
+                    <PivotItem Header="Item Discount">
+                        <views:TabDiscount />
+                    </PivotItem>
+                    <PivotItem Header="Item Size">
+                        <views:TabSize />
+                    </PivotItem>
+                </Pivot>-->
+
+                <!--Related Items-->
+                <views:RelatedItems x:Name="relatedItems" Grid.Row="4" Grid.Column="1" Margin="0,0,12,36" Visibility="{x:Bind Helper.Collapsed(ViewModel.IsNewItem)}" />
+
+                <!--PropertyGroup 2-->
+                <Grid  x:Name="group2" Grid.Row="2" Grid.Column="1" Padding="0,0,12,12" Background="WhiteSmoke">
+                    <views:PropertyGroup2 x:Name="propertyGroup2" />
+                </Grid>
+
+                <!--PropertyGroup 1-->
+                <Grid x:Name="group1" Grid.Row="1" Grid.Column="1" Padding="0,12,12,12" Background="WhiteSmoke">
+                    <views:PropertyGroup1 x:Name="propertyGroup1" />
+                </Grid>
+
+                <!--Header-->
+                <Grid x:Name="header" Grid.Row="0" Grid.ColumnSpan="2"  Background="WhiteSmoke">
+                    <Image x:Name="headerImage" Source="{x:Bind ViewModel.Item.CatalogType.ImageUrl, Mode=OneWay}" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <!--
+                    MP! fixme:
+                    
+                    <Grid>
+                        <Grid.Background>
+                            <controls:BackdropBlurBrush x:Name="brush" />
+                        </Grid.Background>
+                    </Grid>
+                    -->
+                </Grid>
+
+                <!--Item Picture-->
+                <Border x:Name="picture" Grid.Row="1" Grid.RowSpan="2" Margin="12" BorderBrush="LightGray" BorderThickness="1" HorizontalAlignment="Left" Background="White">
+                    <Button Padding="0" Background="Transparent" BorderThickness="1" Width="298" Height="254" Command="{x:Bind ViewModel.SelectPictureCommand}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                        <Grid>
+                            <FontIcon Glyph="&#xEB9F;" FontSize="120" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="DarkGray" Visibility="{x:Bind Helper.Collapsed(ViewModel.HasPicture)}" />
+                            <Image Source="{x:Bind ViewModel.Item.PictureUri, Mode=OneWay}" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Grid>
+                    </Button>
+                </Border>
+
+                <!--Aside-->
+                <views:SideProperties x:Name="aside" Grid.Row="3" Grid.RowSpan="2" Margin="12,0,12,36" />
+            </Grid>
+        </ScrollViewer>
+
+        <CommandBar IsOpen="{x:Bind ViewModel.IsCommandBarOpen, Mode=TwoWay}" IsSticky="True" ClosedDisplayMode="Minimal" VerticalAlignment="Bottom" IsDynamicOverflowEnabled="False" RequestedTheme="Dark" Style="{StaticResource CommandBarRevealStyle}" >
+            <AppBarButton Icon="Share" Label="Share" Command="{x:Bind ViewModel.ShareCommand}" />
+            <AppBarSeparator />
+            <AppBarButton Icon="Delete" Label="Delete" Command="{x:Bind ViewModel.DeleteCommand}" Visibility="{x:Bind ViewModel.IsDeleteVisible, Converter={StaticResource BoolToVisibilityConverter}}" Style="{StaticResource AppBarButtonRevealStyle}" />
+            <AppBarSeparator Visibility="{x:Bind ViewModel.IsSeparatorVisible, Converter={StaticResource BoolToVisibilityConverter}}" />
+            <AppBarButton Icon="Save" Label="Save" Command="{x:Bind ViewModel.SaveCommand}" Visibility="{x:Bind ViewModel.IsSaveVisible, Converter={StaticResource BoolToVisibilityConverter}}" Style="{StaticResource AppBarButtonRevealStyle}" />
+        </CommandBar>
+    </Grid>
+</Page>

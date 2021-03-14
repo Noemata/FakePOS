@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{1DBC888B-89B5-41B8-96A1-C23205674EC0}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FakePOS</RootNamespace>
+    <AssemblyName>FakePOS</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.19041.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.19041.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
+    <AppxPackageSigningEnabled>false</AppxPackageSigningEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM64'">
+    <OutputPath>bin\ARM64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Behaviors\EventToCommandBehavior.cs" />
+    <Compile Include="Controls\BackdropBlurBrush.cs" />
+    <Compile Include="Controls\ButtonControl.cs" />
+    <Compile Include="Controls\CalendarDatePickerEx.cs" />
+    <Compile Include="Controls\GrayScaleBrush.cs" />
+    <Compile Include="Controls\IconRadioButton.cs" />
+    <Compile Include="Controls\LabelComboBox.cs" />
+    <Compile Include="Controls\LabelTextBlock.cs" />
+    <Compile Include="Controls\LabelTextBox.cs" />
+    <Compile Include="Controls\PathRadioButton.cs" />
+    <Compile Include="Controls\ToggleButtonControl.cs" />
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Extensions\AnimationExtensions.cs" />
+    <Compile Include="Extensions\ElementRenderExtension.cs" />
+    <Compile Include="Extensions\ExpressionAnimationExtensions.cs" />
+    <Compile Include="Extensions\FrameExtensions.cs" />
+    <Compile Include="Extensions\ScrollViewerExtensions.cs" />
+    <Compile Include="Extensions\VisualTreeExtensions.cs" />
+    <Compile Include="Helpers\ImagePicker.cs" />
+    <Compile Include="Helpers\UIHelper.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\LocalFolderService.cs" />
+    <Compile Include="Services\ResourceService.cs" />
+    <Compile Include="ViewModels\CatalogViewModel.cs" />
+    <Compile Include="ViewModels\Catalog\ItemDetailViewModel.cs" />
+    <Compile Include="ViewModels\Catalog\ItemsGridViewModel.cs" />
+    <Compile Include="ViewModels\Catalog\ItemsListViewModel.cs" />
+    <Compile Include="ViewModels\ShellViewModel.cs" />
+    <Compile Include="Views\AboutView.xaml.cs">
+      <DependentUpon>AboutView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Catalog\ItemDetail\ItemDetailView.xaml.cs">
+      <DependentUpon>ItemDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Catalog\ItemsGridView.xaml.cs">
+      <DependentUpon>ItemsGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Catalog\ItemsListView.xaml.cs">
+      <DependentUpon>ItemsListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\POSView.xaml.cs">
+      <DependentUpon>POSView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CatalogView.xaml.cs">
+      <DependentUpon>CatalogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Catalog\ItemDetail\RelatedItems.xaml.cs">
+      <DependentUpon>RelatedItems.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Catalog\ItemDetail\PropertyGroup1.xaml.cs">
+      <DependentUpon>PropertyGroup1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Catalog\ItemDetail\PropertyGroup2.xaml.cs">
+      <DependentUpon>PropertyGroup2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShellView.xaml.cs">
+      <DependentUpon>ShellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Catalog\ItemDetail\SideProperties.xaml.cs">
+      <DependentUpon>SideProperties.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Catalog\ItemDetail\TabDiscount.xaml.cs">
+      <DependentUpon>TabDiscount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Catalog\ItemDetail\TabSize.xaml.cs">
+      <DependentUpon>TabSize.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\CatalogTypes\CatalogType0.jpg" />
+    <Content Include="Assets\CatalogTypes\CatalogType1.jpg" />
+    <Content Include="Assets\CatalogTypes\CatalogType2.jpg" />
+    <Content Include="Assets\CatalogTypes\CatalogType3.jpg" />
+    <Content Include="Assets\CatalogTypes\CatalogType4.jpg" />
+    <Content Include="Assets\Catalog\101001.jpg" />
+    <Content Include="Assets\Catalog\101002.jpg" />
+    <Content Include="Assets\Catalog\101003.jpg" />
+    <Content Include="Assets\Catalog\101004.jpg" />
+    <Content Include="Assets\Catalog\101009.jpg" />
+    <Content Include="Assets\Catalog\102001.jpg" />
+    <Content Include="Assets\Catalog\102002.jpg" />
+    <Content Include="Assets\Catalog\102003.jpg" />
+    <Content Include="Assets\Catalog\102004.jpg" />
+    <Content Include="Assets\Catalog\102009.jpg" />
+    <Content Include="Assets\Catalog\103001.jpg" />
+    <Content Include="Assets\Catalog\103002.jpg" />
+    <Content Include="Assets\Catalog\103003.jpg" />
+    <Content Include="Assets\Catalog\103004.jpg" />
+    <Content Include="Assets\Catalog\103009.jpg" />
+    <Content Include="Assets\Catalog\104001.jpg" />
+    <Content Include="Assets\Catalog\104002.jpg" />
+    <Content Include="Assets\Catalog\104003.jpg" />
+    <Content Include="Assets\Catalog\104004.jpg" />
+    <Content Include="Assets\Catalog\104009.jpg" />
+    <Content Include="Assets\Catalog\201001.jpg" />
+    <Content Include="Assets\Catalog\201002.jpg" />
+    <Content Include="Assets\Catalog\201004.jpg" />
+    <Content Include="Assets\Catalog\201005.jpg" />
+    <Content Include="Assets\Catalog\201006.jpg" />
+    <Content Include="Assets\Catalog\202001.jpg" />
+    <Content Include="Assets\Catalog\202002.jpg" />
+    <Content Include="Assets\Catalog\202004.jpg" />
+    <Content Include="Assets\Catalog\202005.jpg" />
+    <Content Include="Assets\Catalog\202006.jpg" />
+    <Content Include="Assets\Catalog\203001.jpg" />
+    <Content Include="Assets\Catalog\203002.jpg" />
+    <Content Include="Assets\Catalog\203004.jpg" />
+    <Content Include="Assets\Catalog\203005.jpg" />
+    <Content Include="Assets\Catalog\203006.jpg" />
+    <Content Include="Assets\Catalog\204001.jpg" />
+    <Content Include="Assets\Catalog\204002.jpg" />
+    <Content Include="Assets\Catalog\204004.jpg" />
+    <Content Include="Assets\Catalog\204005.jpg" />
+    <Content Include="Assets\Catalog\204006.jpg" />
+    <Content Include="Assets\Catalog\301099.jpg" />
+    <Content Include="Assets\Catalog\302099.jpg" />
+    <Content Include="Assets\Catalog\303099.jpg" />
+    <Content Include="Assets\Catalog\304099.jpg" />
+    <Content Include="Assets\Catalog\401001.jpg" />
+    <Content Include="Assets\Catalog\401002.jpg" />
+    <Content Include="Assets\Catalog\401004.jpg" />
+    <Content Include="Assets\Catalog\401006.jpg" />
+    <Content Include="Assets\Catalog\401009.jpg" />
+    <Content Include="Assets\Catalog\401080.jpg" />
+    <Content Include="Assets\Catalog\402001.jpg" />
+    <Content Include="Assets\Catalog\402002.jpg" />
+    <Content Include="Assets\Catalog\402004.jpg" />
+    <Content Include="Assets\Catalog\402006.jpg" />
+    <Content Include="Assets\Catalog\402009.jpg" />
+    <Content Include="Assets\Catalog\402080.jpg" />
+    <Content Include="Assets\Catalog\403001.jpg" />
+    <Content Include="Assets\Catalog\403002.jpg" />
+    <Content Include="Assets\Catalog\403004.jpg" />
+    <Content Include="Assets\Catalog\403006.jpg" />
+    <Content Include="Assets\Catalog\403009.jpg" />
+    <Content Include="Assets\Catalog\403080.jpg" />
+    <Content Include="Assets\Catalog\404001.jpg" />
+    <Content Include="Assets\Catalog\404002.jpg" />
+    <Content Include="Assets\Catalog\404004.jpg" />
+    <Content Include="Assets\Catalog\404006.jpg" />
+    <Content Include="Assets\Catalog\404009.jpg" />
+    <Content Include="Assets\Catalog\404080.jpg" />
+    <Content Include="Assets\LoginBackground.png" />
+    <Content Include="Assets\POSBackground.png" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Catalog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Converters.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\RadioButtons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AboutView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Catalog\ItemDetail\ItemDetailView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Catalog\ItemsGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Catalog\ItemsListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\POSView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CatalogView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Catalog\ItemDetail\RelatedItems.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Catalog\ItemDetail\PropertyGroup1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Catalog\ItemDetail\PropertyGroup2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ShellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Catalog\ItemDetail\SideProperties.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Catalog\ItemDetail\TabDiscount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Catalog\ItemDetail\TabSize.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection">
+      <Version>5.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.2.12</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Mvvm">
+      <Version>8.0.0-preview5</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Animations">
+      <Version>7.0.0-preview5</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Controls">
+      <Version>7.0.0-preview5</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.UI.Xaml">
+      <Version>2.6.0-prerelease.210217002</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Uwp.Managed">
+      <Version>2.0.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\FakePOS.Models\FakePOS.Models.csproj">
+      <Project>{fa044b5f-461f-4764-beeb-2c6ddf1fd600}</Project>
+      <Name>FakePOS.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FakePOS.Services\FakePOS.Services.csproj">
+      <Project>{23a83db1-c437-4303-8f27-d35d33969bef}</Project>
+      <Name>FakePOS.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FakePOS.Uwp.Services\FakePOS.Uwp.Services.csproj">
+      <Project>{be9513b6-786d-4131-b522-087111776c28}</Project>
+      <Name>FakePOS.Uwp.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FakePOS.ViewModels\FakePOS.ViewModels.csproj">
+      <Project>{9e6f8771-e062-4981-9527-7d5cb229db17}</Project>
+      <Name>FakePOS.ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\CatalogDb\CatalogDb.json" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

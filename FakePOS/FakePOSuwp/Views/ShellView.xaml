@@ -1,0 +1,97 @@
+﻿<Page
+    x:Class="FakePOS.Views.ShellView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FakePOS.Views"
+    xmlns:winui="using:Microsoft.UI.Xaml.Controls"
+    xmlns:converters="using:FakePOS.Converters"
+    xmlns:i="using:Microsoft.Xaml.Interactivity"
+    xmlns:ic="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:ui="using:FakePOS.Behaviors"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <converters:BoolToVisibilityConverter x:Name="BoolToVisibilityConverter"/>
+    </Page.Resources>
+
+    <Grid>
+        <winui:NavigationView x:Name="NavigationView"
+                              Header="{x:Bind ViewModel.Header, Mode=OneWay}"
+                              IsBackButtonVisible="Collapsed"
+                              Background="Transparent"
+                              PaneDisplayMode="LeftCompact"
+                              IsSettingsVisible="False">
+            <i:Interaction.Behaviors>
+                <!-- Note: PassArguments="false" causes sender to be passed to ViewModel (very handy) -->
+                <ui:EventToCommandBehavior 
+                            Event="ItemInvoked"
+                            Command="{x:Bind ViewModel.ItemInvokedCommand}" 
+                            PassArguments="true"/>
+            </i:Interaction.Behaviors>
+
+            <winui:NavigationView.MenuItems>
+
+                <winui:NavigationViewItem Icon="Calculator" Content="POS" IsEnabled="{x:Bind bNot(ViewModel.IsSetting), Mode=OneWay}" />
+
+                <winui:NavigationViewItem Icon="Shop" Content="Catalog" IsEnabled="{x:Bind bNot(ViewModel.IsSetting), Mode=OneWay}" />
+
+                <winui:NavigationViewItem Content="About" IsEnabled="{x:Bind bNot(ViewModel.IsSetting), Mode=OneWay}" >
+                    <winui:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE783;" />
+                    </winui:NavigationViewItem.Icon>
+                </winui:NavigationViewItem>
+
+            </winui:NavigationView.MenuItems>
+            <winui:NavigationView.PaneFooter>
+                <Button x:Name="LogoutOption" Background="Transparent" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" CornerRadius="0" IsEnabled="{x:Bind bNot(ViewModel.IsSetting), Mode=OneWay}" Command="{x:Bind ViewModel.LogoutAsyncCommand}">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <PersonPicture DisplayName="Contoso POS" Height="20"/>
+                            <TextBlock Text="Logout" Padding="12,0,0,0" />
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+            </winui:NavigationView.PaneFooter>
+            <Grid>
+                <Frame x:Name="ContentFrame" x:FieldModifier="Public" Padding="14 14" >
+                    <i:Interaction.Behaviors>
+                        <ic:EventTriggerBehavior EventName="Loaded">
+                            <ic:InvokeCommandAction Command="{x:Bind ViewModel.FrameLoadedCommand}" CommandParameter="{x:Bind ContentFrame}"/>
+                        </ic:EventTriggerBehavior>
+                    </i:Interaction.Behaviors>
+                    <Frame.ContentTransitions>
+                        <TransitionCollection>
+                            <NavigationThemeTransition>
+                                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                                    <DrillInNavigationTransitionInfo />
+                                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                            </NavigationThemeTransition>
+                        </TransitionCollection>
+                    </Frame.ContentTransitions>
+                </Frame>
+            </Grid>
+        </winui:NavigationView>
+        <!--
+        WinUI 2.4 and up has broken how the footer previously worked :-(
+        So we resort to this nonesense.  Why a toggle?  To have a different setup
+        for each page selected.  Complex apps need this else you get lost in setup
+        tabs and can't relate your setup action back to where you were working.
+        -->
+        <Grid VerticalAlignment="Bottom">
+            <ToggleButton CornerRadius="0"
+                          ToolTipService.ToolTip="Settings"
+                          Width="40"
+                          Click="{x:Bind ViewModel.OnSettings, Mode=OneWay}"
+                          IsChecked="{x:Bind ViewModel.IsSetting, Mode=TwoWay}">
+                <FontIcon Glyph="&#xE115;"/>
+            </ToggleButton>
+        </Grid>
+        <Grid Background="DarkGray" Opacity="0.5" Visibility="{x:Bind ViewModel.IsBusy, Mode=OneWay}">
+            <ProgressRing Visibility="{x:Bind ViewModel.IsBusy, Mode=OneWay}" Margin="40,0,0,0" IsActive="{x:Bind ViewModel.IsBusy, Mode=OneWay}" Width="200" Height="200" />
+        </Grid>
+        <TextBlock Text="{x:Bind ViewModel.AppVersion}" FontSize="9" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="{x:Bind ViewModel.ShowVersion, Mode=OneWay}" />
+    </Grid>
+</Page>

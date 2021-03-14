@@ -1,0 +1,22 @@
+﻿<Application
+    x:Class="FakePOS.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    RequestedTheme="Light"
+    xmlns:local="using:FakePOS"
+    xmlns:converters="using:FakePOS.Converters">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--<converters:BoolToVisibilityConverter x:Name="BoolToVisibilityConverter"/>-->
+
+            <ResourceDictionary.MergedDictionaries>
+                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+                <ResourceDictionary Source="/Styles/Catalog.xaml" />
+                <ResourceDictionary Source="/Styles/Converters.xaml" />
+                <ResourceDictionary Source="/Styles/RadioButtons.xaml" />
+                <ResourceDictionary Source="/Themes/Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <!-- Other app resources here -->
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

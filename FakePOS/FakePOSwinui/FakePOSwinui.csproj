@@ -1,0 +1,233 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <RootNamespace>FakePOS</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Platforms>x86;x64;arm64</Platforms>
+    <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
+    <AssemblyName>FakePOS</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Assets\LoginBackground.png" />
+    <None Remove="Assets\POSBackground.png" />
+  </ItemGroup>
+
+    <ItemGroup>
+    <Compile Include="..\FakePOSuwp\Behaviors\EventToCommandBehavior.cs" Link="Behaviors\EventToCommandBehavior.cs" />
+    <Compile Include="..\FakePOSuwp\Controls\BackdropBlurBrush.cs" Link="Controls\BackdropBlurBrush.cs" />
+    <Compile Include="..\FakePOSuwp\Controls\ButtonControl.cs" Link="Controls\ButtonControl.cs" />
+    <Compile Include="..\FakePOSuwp\Controls\CalendarDatePickerEx.cs" Link="Controls\CalendarDatePickerEx.cs" />
+    <Compile Include="..\FakePOSuwp\Controls\GrayScaleBrush.cs" Link="Controls\GrayScaleBrush.cs" />
+    <Compile Include="..\FakePOSuwp\Controls\IconRadioButton.cs" Link="Controls\IconRadioButton.cs" />
+    <Compile Include="..\FakePOSuwp\Controls\LabelComboBox.cs" Link="Controls\LabelComboBox.cs" />
+    <Compile Include="..\FakePOSuwp\Controls\LabelTextBlock.cs" Link="Controls\LabelTextBlock.cs" />
+    <Compile Include="..\FakePOSuwp\Controls\LabelTextBox.cs" Link="Controls\LabelTextBox.cs" />
+    <Compile Include="..\FakePOSuwp\Controls\PathRadioButton.cs" Link="Controls\PathRadioButton.cs" />
+    <Compile Include="..\FakePOSuwp\Controls\ToggleButtonControl.cs" Link="Controls\ToggleButtonControl.cs" />
+    <Compile Include="..\FakePOSuwp\Converters\BoolToVisibilityConverter.cs" Link="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="..\FakePOSuwp\Extensions\AnimationExtensions.cs" Link="Extensions\AnimationExtensions.cs" />
+    <Compile Include="..\FakePOSuwp\Extensions\ElementRenderExtension.cs" Link="Extensions\ElementRenderExtension.cs" />
+    <Compile Include="..\FakePOSuwp\Extensions\ExpressionAnimationExtensions.cs" Link="Extensions\ExpressionAnimationExtensions.cs" />
+    <Compile Include="..\FakePOSuwp\Extensions\FrameExtensions.cs" Link="Extensions\FrameExtensions.cs" />
+    <Compile Include="..\FakePOSuwp\Extensions\ScrollViewerExtensions.cs" Link="Extensions\ScrollViewerExtensions.cs" />
+    <Compile Include="..\FakePOSuwp\Extensions\VisualTreeExtensions.cs" Link="Extensions\VisualTreeExtensions.cs" />
+    <Compile Include="..\FakePOSuwp\Helpers\ImagePicker.cs" Link="Helpers\ImagePicker.cs" />
+    <Compile Include="..\FakePOSuwp\Helpers\UIHelper.cs" Link="Helpers\UIHelper.cs" />
+    <Compile Include="..\FakePOSuwp\Services\LocalFolderService.cs" Link="Services\LocalFolderService.cs" />
+    <Compile Include="..\FakePOSuwp\Services\ResourceService.cs" Link="Services\ResourceService.cs" />
+    <Compile Include="..\FakePOSuwp\ViewModels\CatalogViewModel.cs" Link="ViewModels\CatalogViewModel.cs" />
+    <Compile Include="..\FakePOSuwp\ViewModels\Catalog\ItemDetailViewModel.cs" Link="ViewModels\Catalog\ItemDetailViewModel.cs" />
+    <Compile Include="..\FakePOSuwp\ViewModels\Catalog\ItemsGridViewModel.cs" Link="ViewModels\Catalog\ItemsGridViewModel.cs" />
+    <Compile Include="..\FakePOSuwp\ViewModels\Catalog\ItemsListViewModel.cs" Link="ViewModels\Catalog\ItemsListViewModel.cs" />
+    <Compile Include="..\FakePOSuwp\ViewModels\ShellViewModel.cs" Link="ViewModels\ShellViewModel.cs" />
+    <Compile Include="..\FakePOSuwp\Views\AboutView.xaml.cs" Link="Views\AboutView.xaml.cs" />
+    <Compile Include="..\FakePOSuwp\Views\CatalogView.xaml.cs" Link="Views\CatalogView.xaml.cs" />
+    <Compile Include="..\FakePOSuwp\Views\Catalog\ItemDetail\ItemDetailView.xaml.cs" Link="Views\Catalog\ItemDetail\ItemDetailView.xaml.cs" />
+    <Compile Include="..\FakePOSuwp\Views\Catalog\ItemDetail\PropertyGroup1.xaml.cs" Link="Views\Catalog\ItemDetail\PropertyGroup1.xaml.cs" />
+    <Compile Include="..\FakePOSuwp\Views\Catalog\ItemDetail\PropertyGroup2.xaml.cs" Link="Views\Catalog\ItemDetail\PropertyGroup2.xaml.cs" />
+    <Compile Include="..\FakePOSuwp\Views\Catalog\ItemDetail\RelatedItems.xaml.cs" Link="Views\Catalog\ItemDetail\RelatedItems.xaml.cs" />
+    <Compile Include="..\FakePOSuwp\Views\Catalog\ItemDetail\SideProperties.xaml.cs" Link="Views\Catalog\ItemDetail\SideProperties.xaml.cs" />
+    <Compile Include="..\FakePOSuwp\Views\Catalog\ItemDetail\TabDiscount.xaml.cs" Link="Views\Catalog\ItemDetail\TabDiscount.xaml.cs" />
+    <Compile Include="..\FakePOSuwp\Views\Catalog\ItemDetail\TabSize.xaml.cs" Link="Views\Catalog\ItemDetail\TabSize.xaml.cs" />
+    <Compile Include="..\FakePOSuwp\Views\Catalog\ItemsGridView.xaml.cs" Link="Views\Catalog\ItemsGridView.xaml.cs" />
+    <Compile Include="..\FakePOSuwp\Views\Catalog\ItemsListView.xaml.cs" Link="Views\Catalog\ItemsListView.xaml.cs" />
+    <Compile Include="..\FakePOSuwp\Views\LoginView.xaml.cs" Link="Views\LoginView.xaml.cs" />
+    <Compile Include="..\FakePOSuwp\Views\POSView.xaml.cs" Link="Views\POSView.xaml.cs" />
+    <Compile Include="..\FakePOSuwp\Views\SettingsView.xaml.cs" Link="Views\SettingsView.xaml.cs" />
+    <Compile Include="..\FakePOSuwp\Views\ShellView.xaml.cs" Link="Views\ShellView.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\FakePOSuwp\Assets\CatalogDb\CatalogDb.json" Link="Assets\CatalogDb\CatalogDb.json" />
+    <Content Include="..\FakePOSuwp\Assets\CatalogTypes\CatalogType0.jpg" Link="Assets\CatalogTypes\CatalogType0.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\CatalogTypes\CatalogType1.jpg" Link="Assets\CatalogTypes\CatalogType1.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\CatalogTypes\CatalogType2.jpg" Link="Assets\CatalogTypes\CatalogType2.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\CatalogTypes\CatalogType3.jpg" Link="Assets\CatalogTypes\CatalogType3.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\CatalogTypes\CatalogType4.jpg" Link="Assets\CatalogTypes\CatalogType4.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\101001.jpg" Link="Assets\Catalog\101001.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\101002.jpg" Link="Assets\Catalog\101002.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\101003.jpg" Link="Assets\Catalog\101003.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\101004.jpg" Link="Assets\Catalog\101004.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\101009.jpg" Link="Assets\Catalog\101009.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\102001.jpg" Link="Assets\Catalog\102001.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\102002.jpg" Link="Assets\Catalog\102002.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\102003.jpg" Link="Assets\Catalog\102003.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\102004.jpg" Link="Assets\Catalog\102004.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\102009.jpg" Link="Assets\Catalog\102009.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\103001.jpg" Link="Assets\Catalog\103001.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\103002.jpg" Link="Assets\Catalog\103002.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\103003.jpg" Link="Assets\Catalog\103003.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\103004.jpg" Link="Assets\Catalog\103004.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\103009.jpg" Link="Assets\Catalog\103009.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\104001.jpg" Link="Assets\Catalog\104001.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\104002.jpg" Link="Assets\Catalog\104002.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\104003.jpg" Link="Assets\Catalog\104003.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\104004.jpg" Link="Assets\Catalog\104004.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\104009.jpg" Link="Assets\Catalog\104009.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\201001.jpg" Link="Assets\Catalog\201001.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\201002.jpg" Link="Assets\Catalog\201002.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\201004.jpg" Link="Assets\Catalog\201004.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\201005.jpg" Link="Assets\Catalog\201005.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\201006.jpg" Link="Assets\Catalog\201006.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\202001.jpg" Link="Assets\Catalog\202001.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\202002.jpg" Link="Assets\Catalog\202002.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\202004.jpg" Link="Assets\Catalog\202004.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\202005.jpg" Link="Assets\Catalog\202005.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\202006.jpg" Link="Assets\Catalog\202006.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\203001.jpg" Link="Assets\Catalog\203001.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\203002.jpg" Link="Assets\Catalog\203002.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\203004.jpg" Link="Assets\Catalog\203004.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\203005.jpg" Link="Assets\Catalog\203005.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\203006.jpg" Link="Assets\Catalog\203006.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\204001.jpg" Link="Assets\Catalog\204001.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\204002.jpg" Link="Assets\Catalog\204002.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\204004.jpg" Link="Assets\Catalog\204004.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\204005.jpg" Link="Assets\Catalog\204005.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\204006.jpg" Link="Assets\Catalog\204006.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\301099.jpg" Link="Assets\Catalog\301099.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\302099.jpg" Link="Assets\Catalog\302099.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\303099.jpg" Link="Assets\Catalog\303099.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\304099.jpg" Link="Assets\Catalog\304099.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\401001.jpg" Link="Assets\Catalog\401001.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\401002.jpg" Link="Assets\Catalog\401002.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\401004.jpg" Link="Assets\Catalog\401004.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\401006.jpg" Link="Assets\Catalog\401006.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\401009.jpg" Link="Assets\Catalog\401009.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\401080.jpg" Link="Assets\Catalog\401080.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\402001.jpg" Link="Assets\Catalog\402001.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\402002.jpg" Link="Assets\Catalog\402002.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\402004.jpg" Link="Assets\Catalog\402004.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\402006.jpg" Link="Assets\Catalog\402006.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\402009.jpg" Link="Assets\Catalog\402009.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\402080.jpg" Link="Assets\Catalog\402080.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\403001.jpg" Link="Assets\Catalog\403001.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\403002.jpg" Link="Assets\Catalog\403002.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\403004.jpg" Link="Assets\Catalog\403004.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\403006.jpg" Link="Assets\Catalog\403006.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\403009.jpg" Link="Assets\Catalog\403009.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\403080.jpg" Link="Assets\Catalog\403080.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\404001.jpg" Link="Assets\Catalog\404001.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\404002.jpg" Link="Assets\Catalog\404002.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\404004.jpg" Link="Assets\Catalog\404004.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\404006.jpg" Link="Assets\Catalog\404006.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\404009.jpg" Link="Assets\Catalog\404009.jpg" />
+    <Content Include="..\FakePOSuwp\Assets\Catalog\404080.jpg" Link="Assets\Catalog\404080.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
+    <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="8.0.0-preview5" />
+    <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Controls" Version="8.0.0-preview5" />
+    <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Controls.DataGrid" Version="8.0.0-preview5" />
+    <PackageReference Include="Microsoft.ProjectReunion" Version="0.5.0-prerelease" />
+    <PackageReference Include="Microsoft.ProjectReunion.Foundation" Version="0.5.0-prerelease" />
+    <PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="0.5.0-prerelease" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="2.0.3-rc6" />
+    <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FakePOS.Models\FakePOS.Models.csproj" />
+    <ProjectReference Include="..\FakePOS.Services\FakePOS.Services.csproj" />
+    <ProjectReference Include="..\FakePOS.ViewModels\FakePOS.ViewModels.csproj" />
+    <ProjectReference Include="..\FakePOS.WinUI.Services\FakePOS.WinUI.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Assets\Catalog\" />
+    <Folder Include="Assets\CatalogDb\" />
+    <Folder Include="Assets\CatalogTypes\" />
+    <Folder Include="Behaviors\" />
+    <Folder Include="Controls\" />
+    <Folder Include="Converters\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Services\" />
+    <Folder Include="Styles\" />
+    <Folder Include="Themes\" />
+    <Folder Include="ViewModels\Catalog\" />
+    <Folder Include="Views\Catalog\ItemDetail\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="..\FakePOSuwp\Styles\Catalog.xaml" Link="Styles\Catalog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\FakePOSuwp\Styles\Converters.xaml" Link="Styles\Converters.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\FakePOSuwp\Styles\RadioButtons.xaml" Link="Styles\RadioButtons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\FakePOSuwp\Themes\Generic.xaml" Link="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\FakePOSuwp\Views\AboutView.xaml" Link="Views\AboutView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\FakePOSuwp\Views\CatalogView.xaml" Link="Views\CatalogView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\FakePOSuwp\Views\Catalog\ItemDetail\ItemDetailView.xaml" Link="Views\Catalog\ItemDetail\ItemDetailView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\FakePOSuwp\Views\Catalog\ItemDetail\PropertyGroup1.xaml" Link="Views\Catalog\ItemDetail\PropertyGroup1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\FakePOSuwp\Views\Catalog\ItemDetail\PropertyGroup2.xaml" Link="Views\Catalog\ItemDetail\PropertyGroup2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\FakePOSuwp\Views\Catalog\ItemDetail\RelatedItems.xaml" Link="Views\Catalog\ItemDetail\RelatedItems.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\FakePOSuwp\Views\Catalog\ItemDetail\SideProperties.xaml" Link="Views\Catalog\ItemDetail\SideProperties.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\FakePOSuwp\Views\Catalog\ItemDetail\TabDiscount.xaml" Link="Views\Catalog\ItemDetail\TabDiscount.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\FakePOSuwp\Views\Catalog\ItemDetail\TabSize.xaml" Link="Views\Catalog\ItemDetail\TabSize.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\FakePOSuwp\Views\Catalog\ItemsGridView.xaml" Link="Views\Catalog\ItemsGridView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\FakePOSuwp\Views\Catalog\ItemsListView.xaml" Link="Views\Catalog\ItemsListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\FakePOSuwp\Views\LoginView.xaml" Link="Views\LoginView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\FakePOSuwp\Views\POSView.xaml" Link="Views\POSView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\FakePOSuwp\Views\SettingsView.xaml" Link="Views\SettingsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\FakePOSuwp\Views\ShellView.xaml" Link="Views\ShellView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+</Project>

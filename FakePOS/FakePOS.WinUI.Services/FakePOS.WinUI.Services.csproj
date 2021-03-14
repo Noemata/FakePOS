@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <RootNamespace>FakePOS.WinUI.Services</RootNamespace>
+    <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\FakePOS.Uwp.Services\ClipboardService.cs" Link="ClipboardService.cs" />
+    <Compile Include="..\FakePOS.Uwp.Services\INavigationService.cs" Link="INavigationService.cs" />
+    <Compile Include="..\FakePOS.Uwp.Services\NavigationService.cs" Link="NavigationService.cs" />
+    <Compile Include="..\FakePOS.Uwp.Services\SettingsService.cs" Link="SettingsService.cs" />
+    <Compile Include="..\FakePOS.Uwp.Services\UserNotificationService.cs" Link="UserNotificationService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Toolkit.Diagnostics" Version="7.0.0" />
+    <PackageReference Include="Microsoft.ProjectReunion" Version="0.5.0-prerelease" />
+      <PackageReference Include="Microsoft.ProjectReunion.Foundation" Version="0.5.0-prerelease" />
+      <PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="0.5.0-prerelease" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FakePOS.Models\FakePOS.Models.csproj" />
+    <ProjectReference Include="..\FakePOS.Services\FakePOS.Services.csproj" />
+  </ItemGroup>
+</Project>
