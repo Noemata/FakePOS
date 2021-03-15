@@ -48,7 +48,7 @@ Microsoft needs to embrace easy wins and avoid self inflicted wounds.  Dropping 
 
 ## Notes
 
-The original port to WinUI 3 Preview 4 was done over (4) 7.5 hour days and went fairly smoothly.  The transition was impressively easy.  Composition animation code had to be removed from WinUI.  Look for MP! in the comments for other changes or limitations.
+The original port to WinUI 3 Preview 4 was done over (4) 7.5 hour days and went fairly smoothly.  The transition was impressively easy. A significant chunk of the time was spent making the original code more MVVM friendly. Composition animation code had to be removed from WinUI.  Look for MP! in the comments for other changes or limitations.
 
 Transitioning to Reunion 0.5 took just over an hour.  However, there were new issues.  C++ exceptions have to be disabled when debugging.
 
