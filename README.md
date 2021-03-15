@@ -38,7 +38,7 @@ https://github.com/Noemata/SimpleMVVM
 
 The conditional namespace shake and bake is perhaps needless.
 
-The positioning of WinUI as a good UI alternative or next step to UWP UI capabilities is very premature with the qualifier that it does bring needed new capabilities to desktop apps.
+The positioning of WinUI as a good UI alternative or next step to UWP UI capabilities is very premature with the qualifier that it does bring needed new capabilities to desktop apps needing easy Win32 integration.  UWP can be pacakged to deliver everything WinUI is trying to do and then some, but with complicated separation of concerns.
 
 Performance is understandably lack luster given there's lots of under the hood tuning still needed, but we're not really there yet for production level considerations that need to be snappy.
 
