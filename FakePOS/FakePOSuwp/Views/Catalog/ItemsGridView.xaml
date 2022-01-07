@@ -6,8 +6,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:i="using:Microsoft.Xaml.Interactivity"
              xmlns:ic="using:Microsoft.Xaml.Interactions.Core"
-             xmlns:toolkit="using:Microsoft.Toolkit.Uwp.UI.Controls"
-             xmlns:animations="using:Microsoft.Toolkit.Uwp.UI.Animations"
+             xmlns:toolkit="using:CommunityToolkit.WinUI.UI.Controls"
              mc:Ignorable="d">
     <UserControl.Resources>
         <DataTemplate x:Key="BottomItem">
