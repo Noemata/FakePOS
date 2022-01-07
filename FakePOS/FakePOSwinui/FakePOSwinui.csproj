@@ -138,8 +138,8 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
     <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
-    <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Controls" Version="7.1.2" />
-    <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Controls.DataGrid" Version="7.1.2" />
+    <PackageReference Include="CommunityToolkit.WinUI.UI.Controls" Version="7.0.3" />
+    <PackageReference Include="CommunityToolkit.WinUI.UI.Controls.DataGrid" Version="7.0.3" />
     <PackageReference Include="Microsoft.ProjectReunion" Version="0.8.6" />
     <PackageReference Include="Microsoft.ProjectReunion.Foundation" Version="0.8.6" />
     <PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="0.8.6" />

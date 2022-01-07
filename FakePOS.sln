@@ -39,6 +39,7 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E881120C-79A7-4298-BFB0-9CD2AD891D56}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{E881120C-79A7-4298-BFB0-9CD2AD891D56}.Debug|Any CPU.Build.0 = Debug|x86
 		{E881120C-79A7-4298-BFB0-9CD2AD891D56}.Debug|ARM.ActiveCfg = Debug|x86
 		{E881120C-79A7-4298-BFB0-9CD2AD891D56}.Debug|arm64.ActiveCfg = Debug|arm64
 		{E881120C-79A7-4298-BFB0-9CD2AD891D56}.Debug|arm64.Build.0 = Debug|arm64
@@ -61,6 +62,7 @@ Global
 		{E881120C-79A7-4298-BFB0-9CD2AD891D56}.Release|x86.Build.0 = Release|x86
 		{E881120C-79A7-4298-BFB0-9CD2AD891D56}.Release|x86.Deploy.0 = Release|x86
 		{5862C93F-A97C-494F-AFB1-5D8AE958F54A}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{5862C93F-A97C-494F-AFB1-5D8AE958F54A}.Debug|Any CPU.Build.0 = Debug|x86
 		{5862C93F-A97C-494F-AFB1-5D8AE958F54A}.Debug|ARM.ActiveCfg = Debug|x86
 		{5862C93F-A97C-494F-AFB1-5D8AE958F54A}.Debug|arm64.ActiveCfg = Debug|arm64
 		{5862C93F-A97C-494F-AFB1-5D8AE958F54A}.Debug|arm64.Build.0 = Debug|arm64

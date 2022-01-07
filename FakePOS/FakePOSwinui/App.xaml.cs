@@ -32,7 +32,9 @@ namespace FakePOS
         public App()
         {
             this.InitializeComponent();
-            this.Suspending += OnSuspending;
+
+            // LT! Error CS1061 'App' does not contain a definition for 'Suspending' and no accessible extension method 'Suspending' accepting a first argument of type 'App' could be found
+            //this.Suspending += OnSuspending;
 
             var assembly = (typeof(App)).GetTypeInfo().Assembly;
             AppVersion = assembly.GetName().Version.ToString();
