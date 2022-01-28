@@ -26,8 +26,6 @@ namespace FakePOS.Views
     /// </summary>
     public sealed partial class ItemsGridView : UserControl
     {
-        private ExpressionAnimation _expression = null;
-
         public ItemsGridView()
         {
             this.InitializeComponent();
@@ -37,7 +35,10 @@ namespace FakePOS.Views
 
         internal ItemsGridViewModel ViewModel = Ioc.Default.GetService<ItemsGridViewModel>();
 
+#if WINDOWS_UWP
+        private ExpressionAnimation _expression = null;
         private ExpressionAnimation Expression => _expression ?? (_expression = CreateExpression());
+#endif
 
         public void Initialize()
         {
@@ -80,11 +81,14 @@ namespace FakePOS.Views
                 var item = container.GetChildOfType<Border>();
                 var itemVisual = ElementCompositionPreview.GetElementVisual(item);
 
+#if WINDOWS_UWP
                 Expression.SetReferenceParameter("container", containerVisual);
                 itemVisual.StartAnimation("Offset", Expression);
+#endif
             }
         }
 
+#if WINDOWS_UWP
         private ExpressionAnimation CreateExpression()
         {
             var compositor = ElementCompositionPreview.GetElementVisual(this).Compositor;
@@ -96,5 +100,6 @@ namespace FakePOS.Views
             _expression.SetReferenceParameter("scroller", scrollerPropertySet);
             return _expression;
         }
+#endif
     }
 }

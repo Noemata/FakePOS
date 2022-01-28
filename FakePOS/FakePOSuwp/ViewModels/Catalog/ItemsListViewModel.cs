@@ -10,9 +10,9 @@ using Windows.UI.Xaml.Controls;
 #else
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using CommunityToolkit.WinUI.UI.Controls;
 #endif
 
-using CommunityToolkit.WinUI.UI.Controls;
 using Microsoft.Toolkit.Mvvm.Input;
 using Microsoft.Toolkit.Mvvm.Messaging;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
